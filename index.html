@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lines 98</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="scanlines"></div>
+  <div class="bg-grid"></div>
+
+  <div id="app">
+    <!-- MENU SCREEN -->
+    <div id="menu-screen" class="screen active">
+      <div class="menu-glow"></div>
+      <h1 class="game-title">LINES<span>98</span></h1>
+      <p class="menu-subtitle">Выбери уровень сложности</p>
+      <div class="difficulty-cards">
+        <div class="diff-card" data-diff="easy">
+          <div class="diff-icon">◎</div>
+          <div class="diff-name">Лёгкий</div>
+          <div class="diff-desc">+3 шарика за ход<br>5 цветов<br>5 в ряд</div>
+        </div>
+        <div class="diff-card selected" data-diff="normal">
+          <div class="diff-icon">◈</div>
+          <div class="diff-name">Нормальный</div>
+          <div class="diff-desc">+3 шарика за ход<br>7 цветов<br>5 в ряд</div>
+        </div>
+        <div class="diff-card" data-diff="hard">
+          <div class="diff-icon">◉</div>
+          <div class="diff-name">Тяжёлый</div>
+          <div class="diff-desc">+5 шариков за ход<br>7 цветов<br>5 в ряд</div>
+        </div>
+      </div>
+      <button id="start-btn" class="btn-primary">НАЧАТЬ ИГРУ</button>
+      <div class="best-scores">
+        <span>Рекорды: </span>
+        <span id="best-easy">Лёгкий: —</span>
+        <span id="best-normal">Нормальный: —</span>
+        <span id="best-hard">Тяжёлый: —</span>
+      </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game-screen" class="screen">
+      <header class="game-header">
+        <button id="back-btn" class="btn-icon" title="В меню">←</button>
+        <div class="header-center">
+          <div class="score-block">
+            <div class="score-label">ОЧКИ</div>
+            <div id="score" class="score-value">0</div>
+          </div>
+          <div class="diff-badge" id="diff-badge">НОРМАЛЬНЫЙ</div>
+          <div class="score-block">
+            <div class="score-label">РЕКОРД</div>
+            <div id="best-score" class="score-value">0</div>
+          </div>
+        </div>
+        <button id="restart-btn" class="btn-icon" title="Рестарт">↺</button>
+      </header>
+
+      <div class="next-panel">
+        <span class="next-label">Следующие:</span>
+        <div id="next-balls">
+          <div class="next-ball"></div>
+          <div class="next-ball"></div>
+          <div class="next-ball"></div>
+        </div>
+      </div>
+
+      <div id="grid-wrapper">
+        <div id="grid"></div>
+      </div>
+    </div>
+
+    <!-- GAMEOVER SCREEN -->
+    <div id="gameover-screen" class="screen">
+      <div class="go-box">
+        <div class="go-title">GAME OVER</div>
+        <div class="go-score-label">Ваш счёт</div>
+        <div id="go-score" class="go-score">0</div>
+        <div id="go-record" class="go-record"></div>
+        <div class="go-buttons">
+          <button id="play-again-btn" class="btn-primary">ЕЩЁ РАЗ</button>
+          <button id="menu-btn" class="btn-secondary">МЕНЮ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+
+</html>
